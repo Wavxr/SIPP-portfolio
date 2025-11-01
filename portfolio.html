@@ -10,7 +10,9 @@
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <div class="nav-brand">&lt;/wavxr&gt;</div>
+            <a href="index.html" class="nav-brand">
+                <img src="assets/logo-500x500.webp" alt="wavxr logo" style="height: 40px; width: auto;">
+            </a>
             <button class="nav-toggle" id="navToggle">
                 <span></span>
                 <span></span>
@@ -37,74 +39,29 @@
             </div>
 
             <div class="content-section">
-                <h3>Coming Soon</h3>
+                <h3>Featured Projects</h3>
                 <div class="card-content">
                     <p>
-                        This portfolio section is currently under development and will be completed as part of 
-                        the final project. Here, you'll find a comprehensive showcase of my projects, including:
+                        Here's a showcase of my projects spanning full-stack web development, machine learning applications, 
+                        and academic assignments. Each project demonstrates different technical skills and problem-solving approaches.
                     </p>
-                    <br>
-                    <ul style="margin-left: 1.5rem;">
-                        <li>Full stack web applications</li>
-                        <li>Open source contributions</li>
-                        <li>Personal projects and experiments</li>
-                        <li>Hackathon submissions</li>
-                        <li>Case studies and technical writings</li>
-                    </ul>
                 </div>
             </div>
 
-            <div class="card-grid">
-                <div class="card">
-                    <h3 class="card-title">Project Placeholder 1</h3>
-                    <p class="card-subtitle">Full Stack Application</p>
-                    <div class="card-content">
-                        <p>Detailed project information will be added here, including technologies used, 
-                        challenges faced, and solutions implemented.</p>
-                    </div>
-                    <div class="card-meta">
-                        <p>React • Node.js • MySQL</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3 class="card-title">Project Placeholder 2</h3>
-                    <p class="card-subtitle">Web Development</p>
-                    <div class="card-content">
-                        <p>This section will feature project screenshots, live demos, and GitHub repository 
-                        links for a complete project overview.</p>
-                    </div>
-                    <div class="card-meta">
-                        <p>TypeScript • Express.js • Firebase</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3 class="card-title">Project Placeholder 3</h3>
-                    <p class="card-subtitle">API Development</p>
-                    <div class="card-content">
-                        <p>Comprehensive documentation of API projects, including architecture decisions, 
-                        performance optimizations, and deployment strategies.</p>
-                    </div>
-                    <div class="card-meta">
-                        <p>FastAPI • PostgreSQL • Docker</p>
-                    </div>
-                </div>
+            <div class="card-grid" id="projectsContainer">
+                <!-- Projects will be loaded dynamically from data/projects.js -->
             </div>
 
             <br><br>
             <div class="content-section">
-                <h3>Current Focus</h3>
+                <h3>Project Statistics</h3>
                 <div class="card-content">
                     <p>
-                        I'm actively working on documenting my projects and preparing detailed case studies 
-                        that highlight my problem-solving approach, technical decisions, and the impact of 
-                        the solutions I've built.
-                    </p>
-                    <br>
-                    <p>
-                        Check back soon for a complete portfolio featuring live demos, source code, and 
-                        comprehensive project documentation.
+                        <strong>Total Projects:</strong> <span id="totalProjects">9</span> projects across different categories
+                        <br><br>
+                        <strong>Categories:</strong> Software Engineering & Machine Learning, University Projects
+                        <br><br>
+                        <strong>Technologies:</strong> React, Node.js, Python, Java, C++, FastAPI, Firebase, Supabase, and more
                     </p>
                 </div>
             </div>
@@ -118,6 +75,110 @@
         </div>
     </footer>
 
+    <script src="data/projects.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        // Load projects dynamically
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectsContainer = document.getElementById('projectsContainer');
+            const totalProjectsSpan = document.getElementById('totalProjects');
+            
+            // Update total projects count
+            totalProjectsSpan.textContent = projects.length;
+            
+            // Create project cards
+            projects.forEach(project => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                
+                // Project thumbnail
+                const thumbnail = document.createElement('img');
+                thumbnail.src = project.thumbnail;
+                thumbnail.alt = project.name;
+                thumbnail.style.width = '100%';
+                thumbnail.style.height = '200px';
+                thumbnail.style.objectFit = 'cover';
+                thumbnail.style.borderRadius = '8px 8px 0 0';
+                thumbnail.style.marginBottom = '1rem';
+                card.appendChild(thumbnail);
+                
+                // Project title
+                const title = document.createElement('h3');
+                title.className = 'card-title';
+                title.textContent = project.name;
+                card.appendChild(title);
+                
+                // Project category
+                const subtitle = document.createElement('p');
+                subtitle.className = 'card-subtitle';
+                subtitle.textContent = project.category === 'swe-ml' ? 'Software Engineering & ML' : 'University Project';
+                card.appendChild(subtitle);
+                
+                // Project description
+                const content = document.createElement('div');
+                content.className = 'card-content';
+                const description = document.createElement('p');
+                description.textContent = project.description;
+                content.appendChild(description);
+                card.appendChild(content);
+                
+                // Project tags
+                const meta = document.createElement('div');
+                meta.className = 'card-meta';
+                const tags = document.createElement('p');
+                tags.textContent = project.tags.slice(0, 3).join(' • ');
+                if (project.tags.length > 3) {
+                    tags.textContent += ' • +' + (project.tags.length - 3) + ' more';
+                }
+                meta.appendChild(tags);
+                card.appendChild(meta);
+                
+                // Project links
+                const links = document.createElement('div');
+                links.style.display = 'flex';
+                links.style.gap = '10px';
+                links.style.marginTop = '1rem';
+                
+                if (project.github) {
+                    const githubLink = document.createElement('a');
+                    githubLink.href = project.github;
+                    githubLink.target = '_blank';
+                    githubLink.rel = 'noopener noreferrer';
+                    githubLink.textContent = 'GitHub';
+                    githubLink.style.padding = '8px 16px';
+                    githubLink.style.backgroundColor = '#0066cc';
+                    githubLink.style.color = 'white';
+                    githubLink.style.textDecoration = 'none';
+                    githubLink.style.borderRadius = '4px';
+                    githubLink.style.fontSize = '14px';
+                    githubLink.style.transition = 'background-color 0.3s';
+                    githubLink.onmouseover = function() { this.style.backgroundColor = '#0052a3'; };
+                    githubLink.onmouseout = function() { this.style.backgroundColor = '#0066cc'; };
+                    links.appendChild(githubLink);
+                }
+                
+                if (project.link) {
+                    const liveLink = document.createElement('a');
+                    liveLink.href = project.link;
+                    liveLink.target = '_blank';
+                    liveLink.rel = 'noopener noreferrer';
+                    liveLink.textContent = 'Live Demo';
+                    liveLink.style.padding = '8px 16px';
+                    liveLink.style.backgroundColor = '#28a745';
+                    liveLink.style.color = 'white';
+                    liveLink.style.textDecoration = 'none';
+                    liveLink.style.borderRadius = '4px';
+                    liveLink.style.fontSize = '14px';
+                    liveLink.style.transition = 'background-color 0.3s';
+                    liveLink.onmouseover = function() { this.style.backgroundColor = '#218838'; };
+                    liveLink.onmouseout = function() { this.style.backgroundColor = '#28a745'; };
+                    links.appendChild(liveLink);
+                }
+                
+                card.appendChild(links);
+                projectsContainer.appendChild(card);
+            });
+        });
+    </script>
 </body>
 </html>

@@ -10,7 +10,9 @@
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-           <div class="nav-brand">&lt;/wavxr&gt;</div>
+            <a href="index.html" class="nav-brand">
+                <img src="assets/logo-500x500.webp" alt="wavxr logo" style="height: 40px; width: auto;">
+            </a>
             <button class="nav-toggle" id="navToggle">
                 <span></span>
                 <span></span>
@@ -36,72 +38,8 @@
                 <p class="page-description">Technical proficiencies and soft skills</p>
             </div>
 
-            <div class="skills-grid">
-                <!-- Programming Languages -->
-                <div class="skill-category">
-                    <h3>Programming Languages</h3>
-                    <ul class="skill-list">
-                        <li>JavaScript</li>
-                        <li>TypeScript</li>
-                        <li>Java</li>
-                        <li>C++</li>
-                    </ul>
-                </div>
-
-                <!-- Frontend Technologies -->
-                <div class="skill-category">
-                    <h3>Frontend Development</h3>
-                    <ul class="skill-list">
-                        <li>React</li>
-                        <li>Tailwind CSS</li>
-                        <li>HTML5 & CSS3</li>
-                        <li>Responsive Design</li>
-                    </ul>
-                </div>
-
-                <!-- Backend Technologies -->
-                <div class="skill-category">
-                    <h3>Backend Development</h3>
-                    <ul class="skill-list">
-                        <li>Node.js</li>
-                        <li>Express.js</li>
-                        <li>FastAPI</li>
-                        <li>RESTful APIs</li>
-                    </ul>
-                </div>
-
-                <!-- Databases -->
-                <div class="skill-category">
-                    <h3>Databases & Storage</h3>
-                    <ul class="skill-list">
-                        <li>MySQL</li>
-                        <li>Firebase</li>
-                        <li>Supabase</li>
-                        <li>Database Design</li>
-                    </ul>
-                </div>
-
-                <!-- Tools & Methodologies -->
-                <div class="skill-category">
-                    <h3>Tools & Methodologies</h3>
-                    <ul class="skill-list">
-                        <li>Git Version Control</li>
-                        <li>Agile SDLC</li>
-                        <li>Project Management</li>
-                        <li>Code Review</li>
-                    </ul>
-                </div>
-
-                <!-- Soft Skills -->
-                <div class="skill-category">
-                    <h3>Soft Skills</h3>
-                    <ul class="skill-list">
-                        <li>Discipline</li>
-                        <li>Persistence</li>
-                        <li>Communication</li>
-                        <li>Curiosity</li>
-                    </ul>
-                </div>
+            <div class="skills-grid" id="skillsContainer">
+                <!-- Skills will be loaded dynamically from data/skills.js -->
             </div>
 
             <br><br>
@@ -138,6 +76,49 @@
         </div>
     </footer>
 
+    <script src="data/skills.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        // Load skills dynamically
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillsContainer = document.getElementById('skillsContainer');
+            
+            skillsData.forEach(category => {
+                const categoryDiv = document.createElement('div');
+                categoryDiv.className = 'skill-category';
+                
+                const heading = document.createElement('h3');
+                heading.textContent = category.category;
+                categoryDiv.appendChild(heading);
+                
+                const skillList = document.createElement('ul');
+                skillList.className = 'skill-list';
+                
+                category.skills.forEach(skill => {
+                    const skillItem = document.createElement('li');
+                    skillItem.style.display = 'flex';
+                    skillItem.style.alignItems = 'center';
+                    skillItem.style.gap = '10px';
+                    
+                    const skillLogo = document.createElement('img');
+                    skillLogo.src = skill.logo;
+                    skillLogo.alt = skill.name;
+                    skillLogo.style.width = '24px';
+                    skillLogo.style.height = '24px';
+                    skillLogo.style.objectFit = 'contain';
+                    
+                    const skillName = document.createElement('span');
+                    skillName.textContent = skill.name;
+                    
+                    skillItem.appendChild(skillLogo);
+                    skillItem.appendChild(skillName);
+                    skillList.appendChild(skillItem);
+                });
+                
+                categoryDiv.appendChild(skillList);
+                skillsContainer.appendChild(categoryDiv);
+            });
+        });
+    </script>
 </body>
 </html>
