@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skills - John Waver Aguilar</title>
+    <link rel="icon" type="image/webp" href="assets/logo-500x500.webp">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -11,7 +12,8 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="index.html" class="nav-brand">
-                <img src="assets/logo-500x500.webp" alt="wavxr logo" style="height: 40px; width: auto;">
+                <img src="assets/logo-500x500.webp" alt="John Waver Aguilar Logo">
+                <span class="nav-brand-text">John Waver Aguilar</span>
             </a>
             <button class="nav-toggle" id="navToggle">
                 <span></span>
@@ -35,35 +37,41 @@
         <div class="container">
             <div class="page-header">
                 <h1 class="page-title">Skills & Expertise</h1>
-                <p class="page-description">Technical proficiencies and soft skills</p>
+                <p class="page-description">Technical proficiencies and development capabilities</p>
             </div>
 
             <div class="skills-grid" id="skillsContainer">
                 <!-- Skills will be loaded dynamically from data/skills.js -->
             </div>
 
-            <br><br>
             <div class="content-section">
                 <h3>Technical Proficiency</h3>
-                <div class="card-content">
-                    <p>
+                <div class="glass-card">
+                    <p style="color: var(--text-secondary); line-height: 1.8;">
                         With a strong foundation in both frontend and backend technologies, I specialize in building 
                         complete full stack applications. My expertise spans from creating responsive user interfaces 
                         with React and Tailwind CSS to developing robust server-side solutions with Node.js and Express.js.
                     </p>
                     <br>
-                    <p>
+                    <p style="color: var(--text-secondary); line-height: 1.8;">
                         I'm proficient in working with various database systems including MySQL, Firebase, and Supabase, 
                         ensuring data integrity and optimal performance. My experience with TypeScript and modern JavaScript 
                         allows me to write type-safe, maintainable code.
                     </p>
                     <br>
-                    <p>
+                    <p style="color: var(--text-secondary); line-height: 1.8;">
                         I follow Agile SDLC methodologies, utilize Git for version control, and believe in continuous 
                         learning and improvement. My soft skills in discipline, persistence, communication, and curiosity 
                         complement my technical abilities, enabling me to work effectively in team environments and 
                         deliver high-quality solutions.
                     </p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3>Connect With Me</h3>
+                <div id="socialsContainer" class="social-links">
+                    <!-- Social links will be loaded dynamically from data/socials.js -->
                 </div>
             </div>
         </div>
@@ -77,15 +85,17 @@
     </footer>
 
     <script src="data/skills.js"></script>
+    <script src="data/socials.js"></script>
     <script src="js/script.js"></script>
     <script>
         // Load skills dynamically
         document.addEventListener('DOMContentLoaded', function() {
             const skillsContainer = document.getElementById('skillsContainer');
             
-            skillsData.forEach(category => {
+            skillsData.forEach((category, index) => {
                 const categoryDiv = document.createElement('div');
                 categoryDiv.className = 'skill-category';
+                categoryDiv.style.animationDelay = `${index * 0.1}s`;
                 
                 const heading = document.createElement('h3');
                 heading.textContent = category.category;
@@ -96,16 +106,11 @@
                 
                 category.skills.forEach(skill => {
                     const skillItem = document.createElement('li');
-                    skillItem.style.display = 'flex';
-                    skillItem.style.alignItems = 'center';
-                    skillItem.style.gap = '10px';
                     
                     const skillLogo = document.createElement('img');
                     skillLogo.src = skill.logo;
                     skillLogo.alt = skill.name;
-                    skillLogo.style.width = '24px';
-                    skillLogo.style.height = '24px';
-                    skillLogo.style.objectFit = 'contain';
+                    skillLogo.className = 'skill-logo';
                     
                     const skillName = document.createElement('span');
                     skillName.textContent = skill.name;
@@ -117,6 +122,32 @@
                 
                 categoryDiv.appendChild(skillList);
                 skillsContainer.appendChild(categoryDiv);
+            });
+
+            // Load social links dynamically
+            const socialsContainer = document.getElementById('socialsContainer');
+            
+            socials.forEach(social => {
+                const socialLink = document.createElement('a');
+                socialLink.href = social.href;
+                socialLink.target = '_blank';
+                socialLink.rel = 'noopener noreferrer';
+                socialLink.className = 'social-link';
+                
+                // Add appropriate icon based on social platform
+                const iconMap = {
+                    'github': '💻',
+                    'linkedin': '💼',
+                    'portfolio': '🌐',
+                    'resume': '📄',
+                    'facebook': '📘',
+                    'gmail': '📧'
+                };
+                
+                const icon = iconMap[social.id] || '🔗';
+                socialLink.innerHTML = `${icon} ${social.label}`;
+                
+                socialsContainer.appendChild(socialLink);
             });
         });
     </script>

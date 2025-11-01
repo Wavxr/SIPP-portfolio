@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - John Waver Aguilar</title>
+    <link rel="icon" type="image/webp" href="assets/logo-500x500.webp">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -11,7 +12,8 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="index.html" class="nav-brand">
-                <img src="assets/logo-500x500.webp" alt="wavxr logo" style="height: 40px; width: auto;">
+                <img src="assets/logo-500x500.webp" alt="John Waver Aguilar Logo">
+                <span class="nav-brand-text">John Waver Aguilar</span>
             </a>
             <button class="nav-toggle" id="navToggle">
                 <span></span>
@@ -35,33 +37,246 @@
         <div class="container">
             <div class="page-header">
                 <h1 class="page-title">Portfolio</h1>
-                <p class="page-description">Showcase of projects and work</p>
+                <p class="page-description">Featured projects showcasing software engineering and machine learning expertise</p>
             </div>
 
-            <div class="content-section">
-                <h3>Featured Projects</h3>
-                <div class="card-content">
-                    <p>
-                        Here's a showcase of my projects spanning full-stack web development, machine learning applications, 
-                        and academic assignments. Each project demonstrates different technical skills and problem-solving approaches.
-                    </p>
+            <div class="card-grid">
+                <!-- Project 1: RawLens PH -->
+                <div class="card">
+                    <img src="assets/projects/swe-ml/rawlensph/1.jpg" alt="RawLens PH" class="card-image">
+                    <div class="card-body">
+                        <p class="card-subtitle">Software Engineering & ML</p>
+                        <h3 class="card-title">RawLens PH</h3>
+                        <div class="card-content">
+                            <p>A modern camera rental platform with an integrated CRM system, offering verified user accounts, real-time updates...</p>
+                        </div>
+                        <div class="card-meta">
+                            <p><strong>Tech Stack:</strong></p>
+                            <div class="card-tags">
+                                <span class="tag">React 18</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">Supabase</span>
+                                <span class="tag">Tailwind CSS</span>
+                            </div>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://github.com/Wavxr/rawlens" target="_blank" rel="noopener noreferrer" class="card-link card-link-github">GitHub</a>
+                            <a href="https://rawlensph.cam" target="_blank" rel="noopener noreferrer" class="card-link card-link-live">Live Demo</a>
+                            <a href="projects/rawlensph.html" class="card-link card-link-details">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: SuperMango -->
+                <div class="card">
+                    <img src="assets/projects/swe-ml/supermango/1.jpg" alt="SuperMango" class="card-image">
+                    <div class="card-body">
+                        <p class="card-subtitle">Software Engineering & ML</p>
+                        <h3 class="card-title">SuperMango</h3>
+                        <div class="card-content">
+                            <p>A machine learning-powered mobile app that analyzes mango leaf images and real-time weather data to detect...</p>
+                        </div>
+                        <div class="card-meta">
+                            <p><strong>Tech Stack:</strong></p>
+                            <div class="card-tags">
+                                <span class="tag">ResNet-50</span>
+                                <span class="tag">PyTorch</span>
+                                <span class="tag">FastAPI</span>
+                                <span class="tag">React Native</span>
+                            </div>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://github.com/Wavxr/SuperMango" target="_blank" rel="noopener noreferrer" class="card-link card-link-github">GitHub</a>
+                            <a href="projects/supermango.html" class="card-link card-link-details">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: StudyHub Nook -->
+                <div class="card">
+                    <img src="assets/projects/swe-ml/studyhub-nook/1.jpg" alt="StudyHub Nook" class="card-image">
+                    <div class="card-body">
+                        <p class="card-subtitle">Software Engineering & ML</p>
+                        <h3 class="card-title">StudyHub Nook</h3>
+                        <div class="card-content">
+                            <p>A PHP-based e-commerce platform featuring user authentication, product management, a shopping cart, and a robust...</p>
+                        </div>
+                        <div class="card-meta">
+                            <p><strong>Tech Stack:</strong></p>
+                            <div class="card-tags">
+                                <span class="tag">PHP</span>
+                                <span class="tag">MySQL</span>
+                                <span class="tag">Bootstrap</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://github.com/Wavxr/StudyHub-Nook" target="_blank" rel="noopener noreferrer" class="card-link card-link-github">GitHub</a>
+                            <a href="projects/studyhub-nook.html" class="card-link card-link-details">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Watchly -->
+                <div class="card">
+                    <img src="assets/projects/swe-ml/watchly/1.jpg" alt="Watchly" class="card-image">
+                    <div class="card-body">
+                        <p class="card-subtitle">Software Engineering & ML</p>
+                        <h3 class="card-title">Watchly</h3>
+                        <div class="card-content">
+                            <p>An Android app built with Java that lets users discover, track, and manage movies and TV shows, featuring TMDb...</p>
+                        </div>
+                        <div class="card-meta">
+                            <p><strong>Tech Stack:</strong></p>
+                            <div class="card-tags">
+                                <span class="tag">Java</span>
+                                <span class="tag">TMDb API</span>
+                                <span class="tag">Android Studio</span>
+                                <span class="tag">Firebase Auth</span>
+                            </div>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://github.com/Wavxr/Watchly" target="_blank" rel="noopener noreferrer" class="card-link card-link-github">GitHub</a>
+                            <a href="projects/watchly.html" class="card-link card-link-details">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: AEID -->
+                <div class="card">
+                    <img src="assets/projects/swe-ml/AEID/1.jpg" alt="AEID" class="card-image">
+                    <div class="card-body">
+                        <p class="card-subtitle">Software Engineering & ML</p>
+                        <h3 class="card-title">AEID</h3>
+                        <div class="card-content">
+                            <p>A prototype developed at the Hack-It Hackathon for hassle-free and more secure digital registration. AEID uses...</p>
+                        </div>
+                        <div class="card-meta">
+                            <p><strong>Tech Stack:</strong></p>
+                            <div class="card-tags">
+                                <span class="tag">React Native</span>
+                                <span class="tag">Expo</span>
+                                <span class="tag">Cryptography</span>
+                                <span class="tag">KYC</span>
+                            </div>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://github.com/hack-it-The-New-Era-of-Banking/monarch-AEID" target="_blank" rel="noopener noreferrer" class="card-link card-link-github">GitHub</a>
+                            <a href="projects/aeid.html" class="card-link card-link-details">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Smarter-Prompt -->
+                <div class="card">
+                    <img src="assets/projects/swe-ml/smarter-prompt/smarter-prompt.jpg" alt="Smarter-Prompt" class="card-image">
+                    <div class="card-body">
+                        <p class="card-subtitle">Software Engineering & ML</p>
+                        <h3 class="card-title">Smarter-Prompt</h3>
+                        <div class="card-content">
+                            <p>A Chrome extension powered by the Gemini API that helps users craft effective prompts for any purpose. It provides...</p>
+                        </div>
+                        <div class="card-meta">
+                            <p><strong>Tech Stack:</strong></p>
+                            <div class="card-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Vite</span>
+                                <span class="tag">Tailwind CSS</span>
+                                <span class="tag">Gemini API</span>
+                            </div>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://github.com/Wavxr/Smarter-Prompt" target="_blank" rel="noopener noreferrer" class="card-link card-link-github">GitHub</a>
+                            <a href="projects/smarter-prompt.html" class="card-link card-link-details">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7: Hotel Pricing -->
+                <div class="card">
+                    <img src="assets/projects/university/hotelmanagement/1.jpg" alt="Hotel Pricing Optimization" class="card-image">
+                    <div class="card-body">
+                        <p class="card-subtitle">University Project</p>
+                        <h3 class="card-title">Hotel Pricing Optimization</h3>
+                        <div class="card-content">
+                            <p>Dynamic pricing system for hotels depending on demands and occupancy. Uses linear programming and optimization...</p>
+                        </div>
+                        <div class="card-meta">
+                            <p><strong>Tech Stack:</strong></p>
+                            <div class="card-tags">
+                                <span class="tag">C++</span>
+                                <span class="tag">OOP</span>
+                                <span class="tag">Optimization</span>
+                                <span class="tag">Algorithms</span>
+                            </div>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://github.com/Wavxr/Hotel-Pricing-Optimization-Application" target="_blank" rel="noopener noreferrer" class="card-link card-link-github">GitHub</a>
+                            <a href="projects/hotel-pricing.html" class="card-link card-link-details">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8: Movie Management -->
+                <div class="card">
+                    <img src="assets/projects/university/moviemanagement/1.jpg" alt="Movie Record Management" class="card-image">
+                    <div class="card-body">
+                        <p class="card-subtitle">University Project</p>
+                        <h3 class="card-title">Movie Record Management</h3>
+                        <div class="card-content">
+                            <p>Movie record management system created using data structures, algorithms, and ADTs. Features efficient search...</p>
+                        </div>
+                        <div class="card-meta">
+                            <p><strong>Tech Stack:</strong></p>
+                            <div class="card-tags">
+                                <span class="tag">C++</span>
+                                <span class="tag">Data Structures</span>
+                                <span class="tag">Algorithms</span>
+                                <span class="tag">ADT</span>
+                            </div>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://github.com/Wavxr/Movie-Record-Management-System" target="_blank" rel="noopener noreferrer" class="card-link card-link-github">GitHub</a>
+                            <a href="projects/movie-management.html" class="card-link card-link-details">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 9: CPU Scheduling -->
+                <div class="card">
+                    <img src="assets/projects/university/cpu-scheduling/1.jpg" alt="CPU Scheduling Algorithm" class="card-image">
+                    <div class="card-body">
+                        <p class="card-subtitle">University Project</p>
+                        <h3 class="card-title">CPU Scheduling Algorithm</h3>
+                        <div class="card-content">
+                            <p>A CPU Scheduling program that focuses on SRTF, Priority, and Round Robin, all of which are preemptive. Visualizes...</p>
+                        </div>
+                        <div class="card-meta">
+                            <p><strong>Tech Stack:</strong></p>
+                            <div class="card-tags">
+                                <span class="tag">C++</span>
+                                <span class="tag">Scheduling</span>
+                                <span class="tag">Operating Systems</span>
+                                <span class="tag">Algorithms</span>
+                            </div>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://github.com/Wavxr/CPU-Scheduling-Algorithm" target="_blank" rel="noopener noreferrer" class="card-link card-link-github">GitHub</a>
+                            <a href="projects/cpu-scheduling.html" class="card-link card-link-details">Details</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="card-grid" id="projectsContainer">
-                <!-- Projects will be loaded dynamically from data/projects.js -->
-            </div>
-
-            <br><br>
             <div class="content-section">
                 <h3>Project Statistics</h3>
-                <div class="card-content">
-                    <p>
-                        <strong>Total Projects:</strong> <span id="totalProjects">9</span> projects across different categories
+                <div class="glass-card">
+                    <p style="color: var(--text-secondary); line-height: 1.8;">
+                        <strong style="color: var(--text-primary);">Total Projects:</strong> 9 featured projects
                         <br><br>
-                        <strong>Categories:</strong> Software Engineering & Machine Learning, University Projects
+                        <strong style="color: var(--text-primary);">Categories:</strong> Software Engineering & Machine Learning, University Projects
                         <br><br>
-                        <strong>Technologies:</strong> React, Node.js, Python, Java, C++, FastAPI, Firebase, Supabase, and more
+                        <strong style="color: var(--text-primary);">Technologies:</strong> React, Node.js, Python, Java, C++, FastAPI, Firebase, Supabase, and more
                     </p>
                 </div>
             </div>
@@ -75,110 +290,6 @@
         </div>
     </footer>
 
-    <script src="data/projects.js"></script>
     <script src="js/script.js"></script>
-    <script>
-        // Load projects dynamically
-        document.addEventListener('DOMContentLoaded', function() {
-            const projectsContainer = document.getElementById('projectsContainer');
-            const totalProjectsSpan = document.getElementById('totalProjects');
-            
-            // Update total projects count
-            totalProjectsSpan.textContent = projects.length;
-            
-            // Create project cards
-            projects.forEach(project => {
-                const card = document.createElement('div');
-                card.className = 'card';
-                
-                // Project thumbnail
-                const thumbnail = document.createElement('img');
-                thumbnail.src = project.thumbnail;
-                thumbnail.alt = project.name;
-                thumbnail.style.width = '100%';
-                thumbnail.style.height = '200px';
-                thumbnail.style.objectFit = 'cover';
-                thumbnail.style.borderRadius = '8px 8px 0 0';
-                thumbnail.style.marginBottom = '1rem';
-                card.appendChild(thumbnail);
-                
-                // Project title
-                const title = document.createElement('h3');
-                title.className = 'card-title';
-                title.textContent = project.name;
-                card.appendChild(title);
-                
-                // Project category
-                const subtitle = document.createElement('p');
-                subtitle.className = 'card-subtitle';
-                subtitle.textContent = project.category === 'swe-ml' ? 'Software Engineering & ML' : 'University Project';
-                card.appendChild(subtitle);
-                
-                // Project description
-                const content = document.createElement('div');
-                content.className = 'card-content';
-                const description = document.createElement('p');
-                description.textContent = project.description;
-                content.appendChild(description);
-                card.appendChild(content);
-                
-                // Project tags
-                const meta = document.createElement('div');
-                meta.className = 'card-meta';
-                const tags = document.createElement('p');
-                tags.textContent = project.tags.slice(0, 3).join(' • ');
-                if (project.tags.length > 3) {
-                    tags.textContent += ' • +' + (project.tags.length - 3) + ' more';
-                }
-                meta.appendChild(tags);
-                card.appendChild(meta);
-                
-                // Project links
-                const links = document.createElement('div');
-                links.style.display = 'flex';
-                links.style.gap = '10px';
-                links.style.marginTop = '1rem';
-                
-                if (project.github) {
-                    const githubLink = document.createElement('a');
-                    githubLink.href = project.github;
-                    githubLink.target = '_blank';
-                    githubLink.rel = 'noopener noreferrer';
-                    githubLink.textContent = 'GitHub';
-                    githubLink.style.padding = '8px 16px';
-                    githubLink.style.backgroundColor = '#0066cc';
-                    githubLink.style.color = 'white';
-                    githubLink.style.textDecoration = 'none';
-                    githubLink.style.borderRadius = '4px';
-                    githubLink.style.fontSize = '14px';
-                    githubLink.style.transition = 'background-color 0.3s';
-                    githubLink.onmouseover = function() { this.style.backgroundColor = '#0052a3'; };
-                    githubLink.onmouseout = function() { this.style.backgroundColor = '#0066cc'; };
-                    links.appendChild(githubLink);
-                }
-                
-                if (project.link) {
-                    const liveLink = document.createElement('a');
-                    liveLink.href = project.link;
-                    liveLink.target = '_blank';
-                    liveLink.rel = 'noopener noreferrer';
-                    liveLink.textContent = 'Live Demo';
-                    liveLink.style.padding = '8px 16px';
-                    liveLink.style.backgroundColor = '#28a745';
-                    liveLink.style.color = 'white';
-                    liveLink.style.textDecoration = 'none';
-                    liveLink.style.borderRadius = '4px';
-                    liveLink.style.fontSize = '14px';
-                    liveLink.style.transition = 'background-color 0.3s';
-                    liveLink.onmouseover = function() { this.style.backgroundColor = '#218838'; };
-                    liveLink.onmouseout = function() { this.style.backgroundColor = '#28a745'; };
-                    links.appendChild(liveLink);
-                }
-                
-                card.appendChild(links);
-                projectsContainer.appendChild(card);
-            });
-        });
-    </script>
 </body>
 </html>
